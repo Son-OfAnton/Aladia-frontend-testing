@@ -12,7 +12,7 @@
     "build-storybook": "storybook build",
     "tailwind": "tailwindcss build -o ./assets/css/tailwind-out.css",
     "cy:open": "cypress open",
-    "chromatic": "chromatic --auto-accept-changes --project-token=chpt_6bb6ae5923cf052"
+    "chromatic": "chromatic --auto-accept-changes --project-token=chpt_067269f7c38b4c0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
