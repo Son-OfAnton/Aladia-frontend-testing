@@ -31,5 +31,6 @@ jobs:
         working-directory: admas_girma_test_project
 
       - name: Publish to Chromatic
-        run: pnpm run chromatic --auto-accept-changes --project-token=chpt_067269f7c38b4c0
-        working-directory: admas_girma_test_project
+        uses: chromaui/action@latest
+        with:
+          projectToken: chpt_067269f7c38b4c0
