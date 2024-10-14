@@ -1,0 +1,1 @@
+# Aladia front-end testing using Storybook, Cypress, and Chromatic
