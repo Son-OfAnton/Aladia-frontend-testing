@@ -1,1 +1,1 @@
-# Aladia front-end testing using Storybook, Cypress, and Chromatic
+# Aladia front-end testing by Admas Girma
