@@ -1,0 +1,41 @@
+name: Aladia front-end testing assessment Cypress e2e by Admas Girma
+
+on:
+  push:
+    branches:
+      - 'admas_girma'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.15.0"
+      
+      - name: Change to project directory
+        run: cd admas_girma_test_project
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+        working-directory: admas_girma_test_project
+
+      - name: Install dependencies
+        run: pnpm install 
+        working-directory: admas_girma_test_project
+
+
+      - name: Run Cypress tests
+        run: |
+          pnpm run dev &
+          npx wait-on http://localhost:3000
+          pnpm cypress
+        working-directory: admas_girma_test_project

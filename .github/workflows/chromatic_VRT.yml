@@ -1,0 +1,35 @@
+name: Aladia front-end assessment Chromatic VRT by Admas Girma
+
+on:
+  push:
+    branches:
+      - 'admas_girma'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  run-chromatic:
+    name: Chromatic Visual Regression
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Change to project directory
+        run: cd admas_girma_test_project
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+        working-directory: admas_girma_test_project
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: admas_girma_test_project
+
+      - name: Publish to Chromatic
+        run: pnpm run chromatic -- --auto-accept-changes
+        working-directory: admas_girma_test_project
